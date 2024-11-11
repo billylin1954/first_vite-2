@@ -1,0 +1,15 @@
+#app{
+  text-align: center;
+ 
+}
+#ramen{
+ height:200px ;
+ width:200px ;
+}
+.upgrades{
+  max-height: 300px;
+  max-width:900px
+}
+input{
+text-align: center;
+}
