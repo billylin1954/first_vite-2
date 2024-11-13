@@ -18,6 +18,7 @@ const PORT = 3005;
 app.use(json());
 // Route to receive data from the frontend
 app.post('/api/data', (req, res) => {
+  const receivedData = req.body;
   async function run() {
    try {
      await client.connect();
@@ -43,7 +44,6 @@ app.post('/api/data', (req, res) => {
      console.log("Connection closed.");
    }
   }
-  const receivedData = req.body;
   console.log('Data received from frontend:', receivedData);
 
   // Process the data as needed
