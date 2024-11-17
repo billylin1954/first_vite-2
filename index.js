@@ -43,10 +43,10 @@ app.post('/api/data', (req, res) => {
   const receivedData = req.body;
   console.log('Data received from frontend:', receivedData);
 
-  // Process the data as needed
+  
   
   run()
-  // Send a response back to the frontend
+ 
   res.json({ message: 'Data received successfully', data: receivedData });
 });
 app.listen(PORT, () => {
