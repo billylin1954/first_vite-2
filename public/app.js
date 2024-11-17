@@ -4,7 +4,7 @@ let  datatosend = {
     password:""
   };
   console.log(document.getElementById("username").innerHTML)
-  function send(){
+  function run(){
       datatosend.user=document.getElementById("username").value
       datatosend.password=document.getElementById("password").value
       fetch('http://localhost:3005/api/data', {

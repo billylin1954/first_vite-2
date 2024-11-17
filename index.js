@@ -1,7 +1,7 @@
-import { MongoClient } from "mongodb";
+import express,{json} from 'express';
+import  {MongoClient}  from 'mongodb';
 const uri = "mongodb+srv://billylin1954:Cracknut4@cluster0.rrsqc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
-import express,{json} from 'express';
 const app = express();
 //const { readFile } = promises;
 
@@ -18,7 +18,6 @@ const PORT = 3005;
 app.use(json());
 // Route to receive data from the frontend
 app.post('/api/data', (req, res) => {
-  const receivedData = req.body;
   async function run() {
    try {
      await client.connect();
@@ -33,9 +32,6 @@ app.post('/api/data', (req, res) => {
      await collection.insertOne({ user, password });
      console.log("Data inserted:", { user, password });
   
-     // Retrieve a sample document (optional)
-     const movie = await collection.findOne({ title: "testing" });
-     console.log("Found document:", movie);
   
    } catch (error) {
      console.error("Error:", error);
@@ -44,6 +40,7 @@ app.post('/api/data', (req, res) => {
      console.log("Connection closed.");
    }
   }
+  const receivedData = req.body;
   console.log('Data received from frontend:', receivedData);
 
   // Process the data as needed
