@@ -13,3 +13,14 @@
 input{
 text-align: center;
 }
+h1{
+  text-align: center;
+  background-color: aqua;
+  border-radius: 50px;
+  width:5;
+  text-decoration-color: blue;
+}
+body{
+  text-align: center;
+  background-color: grey;
+}
