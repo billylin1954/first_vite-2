@@ -28,12 +28,13 @@ app.post('/api/data', (req, res) => {
   
      const user = receivedData.user
      const password = receivedData.password
+     const type="customer";
      // Insert the document into MongoDB
-    
-
-       await collection.insertOne({ user, password });
-       console.log("Data inserted:", { user, password });
-     
+     if(password>0){
+      
+     }
+     await collection.insertOne({ user, password ,type});
+     console.log("Data inserted:", { user, password });
   
   
    } catch (error) {
