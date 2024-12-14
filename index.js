@@ -29,11 +29,11 @@ app.post('https://first-vite-2.onrender.com/api/data', (req, res) => {
      const user = receivedData.user
      const password = receivedData.password
      // Insert the document into MongoDB
-     if(password>0){
+    
 
        await collection.insertOne({ user, password });
        console.log("Data inserted:", { user, password });
-     }
+     
   
   
    } catch (error) {
