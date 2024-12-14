@@ -17,7 +17,7 @@ const PORT = 3005;
 // Middleware to parse JSON data sent from the frontend
 app.use(json());
 // Route to receive data from the frontend
-app.post('https://first-vite-2.onrender.com/api/data', (req, res) => {
+app.post('/api/data', (req, res) => {
   async function run() {
    try {
      await client.connect();
