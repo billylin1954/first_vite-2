@@ -9,7 +9,7 @@ let  datatosend = {
       console.log( datatosend.user)
       datatosend.password=document.getElementById("password").value
       console.log( datatosend.password)
-      fetch('https://first-vite-2.onrender.com/api/data', {
+      fetch('/api/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
