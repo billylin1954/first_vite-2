@@ -7,7 +7,7 @@ let  datatosend = {
   function run(){
       datatosend.user=document.getElementById("username").value
       datatosend.password=document.getElementById("password").value
-      fetch('http://localhost:3005/api/data', {
+      fetch('https://first-vite-2.onrender.com/api/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

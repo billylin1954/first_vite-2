@@ -17,7 +17,7 @@ const PORT = 3005;
 // Middleware to parse JSON data sent from the frontend
 app.use(json());
 // Route to receive data from the frontend
-app.post('/api/data', (req, res) => {
+app.post('https://first-vite-2.onrender.com/api/data', (req, res) => {
   async function run() {
    try {
      await client.connect();
@@ -29,8 +29,11 @@ app.post('/api/data', (req, res) => {
      const user = receivedData.user
      const password = receivedData.password
      // Insert the document into MongoDB
-     await collection.insertOne({ user, password });
-     console.log("Data inserted:", { user, password });
+     if(password>0){
+
+       await collection.insertOne({ user, password });
+       console.log("Data inserted:", { user, password });
+     }
   
   
    } catch (error) {
